@@ -26,18 +26,15 @@ var config = {
     // A chapter shows a layer when the layer's id is in the chapter's show list.
     layers: [
         {
-            id: "landuse",
-            type: "fill",
-            data: "https://raw.githubusercontent.com/UBCGeodata/ubc-geospatial-opendata/master/ubcv/planning/geojson/ubcv_landuse.geojson",
+            id: "my_fountains",
+            type: "circle",
+            data: "./drinking-fountains.geojson",
             paint: {
                 // A colour for each planning status in the data's OTHER field
-                "fill-color": ["match", ["get", "OTHER"],
-                    "Existing", "#1b9e77",
-                    "Expansion", "#d95f02",
-                    "2050", "#7570b3",
-                    "Future 2050+", "#e7298a",
-                    "#999999"]
-            },
+                "circle-color": ["match", ["get", "in_operation"],
+                    ["year-round", "Year Round"], "#0077B6"
+                    ["spring to fall, "May-October"], "#D55E00", "##707070"
+            ],
             // The fields to show in a popup when the mouse is over an area
             popup: ["NAME", "LANDUSE", "OTHER"],
             // A black outline around the area under the mouse
