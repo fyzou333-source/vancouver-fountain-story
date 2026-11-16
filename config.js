@@ -1,19 +1,12 @@
 var config = {
-    // The basemap style. OpenFreeMap's styles need no account and no key.
-    style: "https://tiles.openfreemap.org/styles/liberty",
+    // A pale basemap keeps the fountain colors visible. The basemap style. OpenFreeMap's styles need no account and no key.
+    style: "https://tiles.openfreemap.org/styles/positron",
 
-    // A marker at the centre of each chapter's view
-    showMarkers: true,
-    markerColor: "#3FB1CE",
+    // No centre markers
+    showMarkers: false,
 
-    // A small overview map in one corner
-    inset: true,
-    insetStyle: "https://tiles.openfreemap.org/styles/positron",
-    insetPosition: "bottom-right", // "top-left", "top-right", "bottom-left" or "bottom-right"
-    insetZoom: 3,
-    insetOptions: {
-        markerColor: "orange"
-    },
+    // No overview map anywhere
+    inset: false,
 
     // The colour of the story panels: "light" or "dark"
     theme: "light",
@@ -24,10 +17,10 @@ var config = {
     // Move through the chapters by itself (off here)
     auto: false,
 
-    title: "Places on and around the UBC Vancouver campus",
-    subtitle: "An example story. Replace it with your own.",
-    byline: "By Your Name",
-    footer: "Data: <a href='https://github.com/UBCGeodata/ubc-geospatial-opendata' target='_blank'>UBC Geodata</a>. Imagery: EOxCloudless <a href='https://cloudless.eox.at' target='_blank'>https://cloudless.eox.at</a> by EOX IT Services GmbH (Contains modified Copernicus Sentinel data 2024). Elevation (chapter four): Terrain Tiles, accessed on 29 October 2026 from <a href='https://registry.opendata.aws/terrain-tiles' target='_blank'>https://registry.opendata.aws/terrain-tiles</a>. Videos: Musqueam Indian Band (chapter five) and Metro Vancouver (chapter six), on Vimeo. Basemap: <a href='https://openfreemap.org/' target='_blank'>OpenFreeMap</a>, <a href='https://openmaptiles.org/' target='_blank'>OpenMapTiles</a>, © <a href='https://www.openstreetmap.org/copyright' target='_blank'>OpenStreetMap contributors</a>. Created using the <a href='https://github.com/opengeos/maplibre-gl-storymaps' target='_blank'>MapLibre Storytelling</a> template, inspired by <a href='https://github.com/mapbox/storytelling' target='_blank'>Mapbox Storytelling</a>.",
+    title: "Finding Water in Vancouver",
+    subtitle: "Explore fountain locations, parks, and reported operating seasons.",
+    byline: "By Fengyu Zou",
+    footer: "Fountain data: <a href='https://opendata.vancouver.ca/explore/assets/drinking-fountains/' target='_blank'>City of Vancouver</a>. Locations are approximate and records do not show live working status. Basemap: OpenFreeMap, OpenMapTiles, and openStreetMap contributors. Adapted from the <a href='https://github.com/FoldingSpace/maplibre-storymap' target='_blank'>FoldingSpace class storymap template</a>, based on MapLibre Storytelling by opengeos. Reuses fountain data from my Exploratory Lab 1.", 
 
     // The layers your story can show. Each layer starts invisible.
     // A chapter shows a layer when the layer's id is in the chapter's show list.
