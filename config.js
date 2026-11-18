@@ -41,7 +41,7 @@ var config = {
                 "circle-stroke-width": 1
             },
             // Fountain information shown when hovering over a point.
-            popup: ["name", "location", "in_operation", "maintainer"],
+            popup: ["name", "maintainer"],
         }
     ],
 
