@@ -57,7 +57,7 @@ var config = {
             alignment: "left",
             title: "Explore fountains around Stanley Park",
             description: "Look at the fountain locations around Stanley Park and the surrounding waterfront. Which are reported as year-round, and which are seasonal? Drag the map to explore and hover over the dots for details.",
-            location: { center: [49.299999, -123.139999], zoom: 13, pitch: 0, bearing: 0 },
+            location: { center: [-123.139999, 49.299999], zoom: 13, pitch: 0, bearing: 0 },
             
             legend: [
                 { color: "#0077B6", label: "Year-round" },
@@ -73,7 +73,7 @@ var config = {
             alignment: "left",
             title: "Compare a different part of Vancouver",
             description: "Now explore Mount Pleasant and its surroundings. How does the pattern of fountain locations compare with the Stanley Park view? Both cahpters sue the same zoom level to support comparison. You can drag and zoom the map and hover over fountains for details.",
-            location: { center: [49.259762, -123.107590], zoom: 13, pitch: 0, bearing: 0 },
+            location: { center: [-123.107590, 49.259762], zoom: 13, pitch: 0, bearing: 0 },
             // Using the same default level of zoom of 13 to align with the Stanley Park for an accurate comparison
             legend: [
                 { color: "#0077B6", label: "Year-round" },
