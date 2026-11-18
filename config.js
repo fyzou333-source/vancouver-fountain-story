@@ -86,17 +86,17 @@ var config = {
         },
         {
             alignment: "left",
-            title: "Elevation and the colours of the imagery",
-            description: "Chapter four. This chapter uses the same satellite style as chapter three. The chart below is calculated from the map's view. Each row of the chart is a range of elevation. The colours in a row are the most common colours of the imagery at that elevation. Each colour in a row is clearly different from the others.",
-            location: { center: [-123.2580, 49.2690], zoom: 14.5, pitch: 0, bearing: 0 },
-            style: "./satellite-style.json",
-            exploreAllowed: true,
-            showMarker: false,
-            // Another web page, shown in the panel
-            embed: "./elevation-colours.html",
-            embedHeight: 150,
-            descriptionAfter: "Move the mouse over the elevation of a row. The map turns almost white outside that range of elevation. Move the mouse over a colour. Only the pixels close to that colour, at that elevation, keep their colour. The chart then shows the hex code of that colour, for example #4a5d3b. On a touch screen, tap an elevation or a colour. Drag the slider to change the saturation of the imagery on the map and in the chart. Saturation is how strong the colours are. The slider starts at +60 %, so the colours are stronger than in chapters three, five and six. In this chapter, you can also drag the map and zoom with the + and − buttons. The chart then changes."
+            title: "Does the season change in the picture?",
+            description: "Return to the citywide view. All recorded fountains are shown here, including seasonal fountains and those without a specified operating season. Notice where the blue year-round fountains appear. In the next chapter, we will hide the other categories so you can compare the patterns.",
+            location: { center: [-123.12, 49.26], zoom: 11, pitch: 0, bearing: 0 },
+            legend: [
+                { color: "#0077B6", label: "Year-round" },
+                { color: "#D55E00", label: "Seasonal" },
+                { color: "#707070", label: "Season not specified" },
+            ],
+            show: ["my_fountains"],
         },
+
         {
             alignment: "left",
             title: "The Musqueam Declaration",
