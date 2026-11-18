@@ -32,8 +32,8 @@ var config = {
             paint: {
                 // colors represent reported operating seasons. Blue for Year Round, Orange for May to October, if not then gray.
                 "circle-color": ["match", ["get", "in_operation"],
-                    ["year-round", "Year Round"], "#0077B6"
-                    ["spring to fall, "May-October"], "#D55E00", 
+                    ["year-round", "Year Round"], "#0077B6",
+                    ["spring to fall", "May-October"], "#D55E00", 
                     "##707070"
                  ],
                 "circle-radius": 5,
@@ -49,9 +49,9 @@ var config = {
     chapters: [
         {
             alignment: "left",
-            title: "The Geography Building",
-            description: "Chapter one. The marker shows the Geography Building. The UBC Vancouver campus is on the traditional, ancestral and unceded territory of the <a href='https://www.musqueam.bc.ca/' target='_blank'>xʷməθkʷəy̓əm (Musqueam)</a> people.",
-            location: { center: [-123.2561, 49.2660], zoom: 16, pitch: 45, bearing: -20 }
+            title: "Where are Vancouver's drinking fountains?",
+            description: "Where could you find drinking water while exploring Vancouver? Each dot represents a fountain in the City's records. Hover over a dot for details. Blue means reported year-round operation, orange means seasonal operation, and gray means the season is not specified. These records do not show whether a fountain is working right now. For more information, visit the <a href='https://vancouver.ca/home-property-development/water-fountains.aspx' target='_blank' rel='noopener noreferrer'>City of Vancouver's drinking fountain information</a>.",
+            location: { center: [-123.2561, 49.2660], zoom: 11, pitch: 0, bearing: 0 }
             // No show line: this chapter shows no layers
         },
         {
@@ -59,15 +59,14 @@ var config = {
             title: "Land use areas on the campus",
             description: "Chapter two. UBC land use areas fade in. Each colour shows UBC's planning status for the area. The legend uses the words in UBC's data. Move the mouse over an area to see its name. In this chapter, you can also drag the map and zoom with the + and − buttons.",
             location: { center: [-123.245, 49.26], zoom: 13, pitch: 0, bearing: 0 },
-            // The legend: the colours of the landuse layer's paint, with their meaning
+            
             legend: [
-                { color: "#1b9e77", label: "Existing" },
-                { color: "#d95f02", label: "Expansion" },
-                { color: "#7570b3", label: "2050" },
-                { color: "#e7298a", label: "Future 2050+" }
+                { color: "#0077B6", label: "Year-round" },
+                { color: "#D55E00", label: "Seasonal" },
+                { color: "#707070", label: "Season not specified" },
             ],
-            // The layer landuse, at opacity 0.6. (show: ["landuse"] would show it fully.)
-            show: { landuse: 0.6 },
+            
+            show: ["my_fountains"],
             // The reader can move and zoom the map in this chapter
             exploreAllowed: true
         },
