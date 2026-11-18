@@ -34,7 +34,7 @@ var config = {
                 "circle-color": ["match", ["get", "in_operation"],
                     ["year-round", "Year Round"], "#0077B6",
                     ["spring to fall", "May-October"], "#D55E00", 
-                    "##707070"
+                    "#707070"
                  ],
                 "circle-radius": 5,
                 "circle-stroke-color": "#FFFFFF",
@@ -51,14 +51,13 @@ var config = {
             alignment: "left",
             title: "Where are Vancouver's drinking fountains?",
             description: "Where could you find drinking water while exploring Vancouver? Each dot represents a fountain in the City's records. Hover over a dot for details. Blue means reported year-round operation, orange means seasonal operation, and gray means the season is not specified. These records do not show whether a fountain is working right now. For more information, visit the <a href='https://vancouver.ca/home-property-development/water-fountains.aspx' target='_blank' rel='noopener noreferrer'>City of Vancouver's drinking fountain information</a>.",
-            location: { center: [-123.2561, 49.2660], zoom: 11, pitch: 0, bearing: 0 }
-            // No show line: this chapter shows no layers
+            location: { center: [-123.12, 49.26], zoom: 11, pitch: 0, bearing: 0 }
         },
         {
-            alignment: "right",
-            title: "Land use areas on the campus",
-            description: "Chapter two. UBC land use areas fade in. Each colour shows UBC's planning status for the area. The legend uses the words in UBC's data. Move the mouse over an area to see its name. In this chapter, you can also drag the map and zoom with the + and − buttons.",
-            location: { center: [-123.245, 49.26], zoom: 13, pitch: 0, bearing: 0 },
+            alignment: "left",
+            title: "Explore fountains around Stanley Park",
+            description: "Look at the fountain locations around Stanley Park and the surrounding waterfront. Which are reported as year-round, and which are seasonal? Drag the map to explore and hover over the dots for details.",
+            location: { center: [-123.145, 49.26], zoom: 13, pitch: 0, bearing: 0 },
             
             legend: [
                 { color: "#0077B6", label: "Year-round" },
