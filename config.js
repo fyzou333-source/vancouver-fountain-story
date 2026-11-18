@@ -30,15 +30,18 @@ var config = {
             type: "circle",
             data: "./drinking-fountains.geojson",
             paint: {
-                // A colour for each planning status in the data's OTHER field
+                // colors represent reported operating seasons. Blue for Year Round, Orange for May to October, if not then gray.
                 "circle-color": ["match", ["get", "in_operation"],
                     ["year-round", "Year Round"], "#0077B6"
-                    ["spring to fall, "May-October"], "#D55E00", "##707070"
-            ],
-            // The fields to show in a popup when the mouse is over an area
-            popup: ["NAME", "LANDUSE", "OTHER"],
-            // A black outline around the area under the mouse
-            outline: true
+                    ["spring to fall, "May-October"], "#D55E00", 
+                    "##707070"
+                 ],
+                "circle-radius": 5,
+                "circle-stroke-color": "#FFFFFF",
+                "circle-stroke-width": 1
+            },
+            // Fountain information shown when hovering over a point.
+            popup: ["name", "location", "in_operation", "maintainer"],
         }
     ],
 
