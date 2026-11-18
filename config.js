@@ -96,7 +96,8 @@ var config = {
                 { color: "#707070", label: "Season not specified" },
             ],
             show: ["my_fountains"],
-            callback: "showAllFountains"
+            callback: "showAllFountains",
+            exploreAllowe: true
         },
 
         {
@@ -107,8 +108,8 @@ var config = {
             legend: [
                 { color: "#0077B6", label: "Year-round" }],
             show: ["my_fountains"],
-            callback: "showAllFountains",
-            exploredAllowed: ture
+            callback: "showYearRoundFountains",
+            exploreAllowe: true
     }
     ]
 
