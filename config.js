@@ -74,6 +74,7 @@ var config = {
             title: "Compare a different part of Vancouver",
             description: "Now explore Mount Pleasant and its surroundings. How does the pattern of fountain locations compare with the Stanley Park view? Both cahpters sue the same zoom level to support comparison. You can drag and zoom the map and hover over fountains for details.",
             location: { center: [49.259762, -123.107590], zoom: 13, pitch: 0, bearing: 0 },
+            // Using the same default level of zoom of 13 to align with the Stanley Park for an accurate comparison
             legend: [
                 { color: "#0077B6", label: "Year-round" },
                 { color: "#D55E00", label: "Seasonal" },
