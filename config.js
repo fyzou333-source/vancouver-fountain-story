@@ -125,3 +125,19 @@ var config = {
 };
 
 // Your own functions go below this line (see "Run your own code at a chapter" in README.md).
+
+// functions learned and inspired from showALLTrees() and highlightTrees() in Filtering MapLibre Assignment.
+// Show every fountain function
+function showAllFountains() {
+    map.setFilter('my_fountains', null);
+}
+
+// show only fountains reported as operating year-round.
+function showYearRoundFountains() {
+    map.setFilter('my_fountains', ['match',
+                  ['get', 'in_operation'],
+                  ['year-round', 'Year Round'], true,
+                                   false
+                ]);
+}
+                
