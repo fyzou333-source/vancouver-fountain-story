@@ -57,7 +57,7 @@ var config = {
             alignment: "left",
             title: "Explore fountains around Stanley Park",
             description: "Look at the fountain locations around Stanley Park and the surrounding waterfront. Which are reported as year-round, and which are seasonal? Drag the map to explore and hover over the dots for details.",
-            location: { center: [-123.145, 49.26], zoom: 13, pitch: 0, bearing: 0 },
+            location: { center: [49.3, -123.14], zoom: 13, pitch: 0, bearing: 0 },
             
             legend: [
                 { color: "#0077B6", label: "Year-round" },
@@ -70,12 +70,18 @@ var config = {
             exploreAllowed: true
         },
         {
-            alignment: "center",
-            title: "Toward the water, from above",
-            description: "Chapter three. The map changes to a second style: satellite imagery with place names on top. If you scroll back up, the map changes back to the first style. The imagery is made from many satellite pictures from 2024.",
-            location: { center: [-123.2639, 49.2670], zoom: 14, pitch: 30, bearing: 40 },
-            // This chapter's own style, in place of the style at the top
-            style: "./satellite-style.json"
+            alignment: "left",
+            title: "Compare a different part of Vancouver",
+            description: "Now explore Mount Pleasant and its surroundings. How does the pattern of fountain locations compare with the Stanley Park view? Both cahpters sue the same zoom level to support comparison. You can drag and zoom the map and hover over fountains for details.",
+            location: { center: [-123.107, 49.256], zoom: 14, pitch: 30, bearing: 40 },
+            legend: [
+                { color: "#0077B6", label: "Year-round" },
+                { color: "#D55E00", label: "Seasonal" },
+                { color: "#707070", label: "Season not specified" },
+            ],
+            show: ["my_fountains"],
+            // The reader can move and zoom the map in this chapter
+            exploreAllowed: true
         },
         {
             alignment: "left",
