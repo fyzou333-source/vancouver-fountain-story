@@ -51,7 +51,8 @@ var config = {
             alignment: "left",
             title: "Where are Vancouver's drinking fountains?",
             description: "Where could you find drinking water while exploring Vancouver? Each dot represents a fountain in the City's records. Hover over a dot for details. Blue means reported year-round operation, orange means seasonal operation, and gray means the season is not specified. These records do not show whether a fountain is working right now. For more information, visit the <a href='https://vancouver.ca/home-property-development/water-fountains.aspx' target='_blank' rel='noopener noreferrer'>City of Vancouver's drinking fountain information</a>.",
-            location: { center: [-123.12, 49.26], zoom: 11, pitch: 0, bearing: 0 }
+            location: { center: [-123.12, 49.26], zoom: 11, pitch: 0, bearing: 0 },
+            show: ["my_fountains"]
         },
         {
             alignment: "left",
@@ -95,33 +96,22 @@ var config = {
                 { color: "#707070", label: "Season not specified" },
             ],
             show: ["my_fountains"],
+            callback: "showAllFountains"
         },
 
         {
             alignment: "left",
-            title: "The Musqueam Declaration",
-            description: "Chapter five. In 1976, Musqueam Elders and leaders signed the Musqueam Declaration. In it, the Musqueam people declare that they “hold aboriginal title to our land”. On 10 June 2026, Musqueam marked the Declaration's 50th anniversary. The map's view includes the lands and waters that the Declaration describes, from Howe Sound to the south bank of the Fraser River and out to the centre of Georgia Strait.",
-            location: { center: [-123.1996, 49.2303], zoom: 9.3, pitch: 0, bearing: 0 },
-            style: "./satellite-style.json",
-            showMarker: false,
-            showInset: false,
-            // A video from Vimeo, shown in the panel
-            embed: "https://player.vimeo.com/video/1200153323?dnt=1",
-            embedHeight: 215,
-            descriptionAfter: "Video: Musqueam Indian Band, <i>Celebrating The 50th Anniversary Of The Musqueam Declaration</i> (2026). Read more on Musqueam's page about <a href='https://www.musqueam.bc.ca/celebrating-the-50th-anniversary-of-the-musqueam-declaration/' target='_blank'>the 50th anniversary</a>, or read <a href='https://www.musqueam.bc.ca/wp-content/uploads/2018/06/musqueam_declaration.pdf' target='_blank'>the Declaration</a> (PDF)."
-        },
-        {
-            alignment: "right",
-            title: "Pacific Spirit Regional Park",
-            description: "Chapter six. Pacific Spirit Regional Park lies between the campus and the City of Vancouver. Its forests, bog, creeks and beaches are habitat for many plants and animals.",
-            location: { center: [-123.2295, 49.2575], zoom: 12.6, pitch: 0, bearing: 0 },
-            style: "./satellite-style.json",
-            showMarker: false,
-            embed: "https://player.vimeo.com/video/490043811?h=45151a6105",
-            embedHeight: 215,
-            descriptionAfter: "Video: Metro Vancouver, <i>Pacific Spirit Regional Park Profile</i> (2020)."
-        }
+            title: "What remains year-round?",
+            description: "Only fountains reported as operating year-round are shown now. The map starts at the same position and zoom as the previous chapter, making the change easier to see. Where do you notice the gaps between the remaining dots? Scroll back to compare with all recorded fountains.",
+            location: { center: [-123.12, 49.26], zoom: 11, pitch: 0, bearing: 0 },
+            legend: [
+                { color: "#0077B6", label: "Year-round" }],
+            show: ["my_fountains"],
+            callback: "showAllFountains",
+            exploredAllowed: ture
+    }
     ]
+
 };
 
 // Your own functions go below this line (see "Run your own code at a chapter" in README.md).
