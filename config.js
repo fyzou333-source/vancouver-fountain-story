@@ -97,7 +97,7 @@ var config = {
             ],
             show: ["my_fountains"],
             callback: "showAllFountains",
-            exploreAllowe: true
+            exploreAllowed: true
         },
 
         {
@@ -109,7 +109,7 @@ var config = {
                 { color: "#0077B6", label: "Year-round" }],
             show: ["my_fountains"],
             callback: "showYearRoundFountains",
-            exploreAllowe: true
+            exploreAllowed: true
     }
     ]
 
