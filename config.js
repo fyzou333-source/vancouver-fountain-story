@@ -120,7 +120,7 @@ var config = {
             // Chapter 6: reader-controlled season filter.
             alignment: "left",
             title: "Explore fountains by operating season",
-            description: "Drag and zoom to an area you want to explore. Choose a reported operating season below to compare fountain locations while keeping the same map view.",
+            description: "Drag and zoom to an area you want to explore. Choose a reported operating season below to compare fountain locations while keeping the same map view.<br><br><label for='fountain-season'>Reported operating season:</label><br><select id='fountain-season'><option value='' selected>All fountains</option><option value='year-round'>Year-round</option><option value='seasonal'>Seasonal</option><option value='unspecified'>Season not specified</option></select><br><br>.",
             location: { center: [-123.12, 49.26], zoom: 11, pitch: 0, bearing: 0 },
             legend: [
                 { color: "#0077B6", label: "Year-round" },
@@ -149,30 +149,33 @@ function showYearRoundFountains() {
                   ['year-round', 'Year Round'], true,
                                    false
                 ]);
+}
 
 //Adapted from MapLibre's "Filter layer symbols using global state" example, season match groups the different values in the data.
 function enableSeasonDropdown() {
-    const select = document.get.getElementById('fountain-season');
+    const select = document.getElementById('fountain-season');
     select.value = '';
     map.setGlobalStateProperty('fountainSeason', select.value);
 
     map.setFilter('my_fountains', ['case',
                  ['==', ['global-state', 'fountainSeason'], ''],
                                   true,
-                ['==', ['global-state', 'fountainSeason'], 'seasonal'],
+                ['==', ['global-state', 'fountainSeason'], 'year-round'],
                 ['match', ['get', 'in_operation'],
-                 ['spring to fall', 'May-October'], true,
-                 false
+                 ['year-round', 'Year Round'], true,
+                 false],
 
+                ['==, [global-state', 'fountainSeason'], 'seasonal'],
                  ['match', ['get', 'in_operation'],
-                 ['year-round', 'Year Round, 'spring to fall', 'May-October'], false,
-                 true],
+                 ['spring to fall', 'May-October'], true,
+                 false],
 
                  ['match', ['get', 'in_operation'],
                   ['year-round', 'Year Round', 'spring to fall', 'May-October'], false,
                   true
                      ]
                  ]);
+}
 function changeFountainSeason(e) {
     const value = e.target.value;
     map.setGlobalStateProperty('fountainSeason', value);
