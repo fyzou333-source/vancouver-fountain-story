@@ -175,6 +175,8 @@ function enableSeasonDropdown() {
                   true
                      ]
                  ]);
+    select.removeEventListener('change', changeFountainSeason);
+    select.addEventListener('change', changeFountainSeason);
 }
 function changeFountainSeason(e) {
     const value = e.target.value;
