@@ -124,8 +124,8 @@ var config = {
             location: { center: [-123.12, 49.26], zoom: 11, pitch: 0, bearing: 0 },
             legend: [
                 { color: "#0077B6", label: "Year-round" },
-                { color: "#0077B6", label: "Year-round" },
-                { color: "#0077B6", label: "Year-round" }],
+                { color: "#D55E00", label: "Seasonal" },
+                { color: "#707070", label: "Season not specified" }],
             show: ["my_fountains"],
             callback: "enableSeasonDropdown",
             exploreAllowed: true   
@@ -150,7 +150,7 @@ function showYearRoundFountains() {
                                    false
                 ]);
 
-    //Adapted from "Filter layer symbols using global state" example, season match groups the different values in the data
+//Adapted from MapLibre's "Filter layer symbols using global state" example, season match groups the different values in the data.
 function enableSeasonDropdown() {
     const select = document.get.getElementById('fountain-season');
     select.value = '';
@@ -166,10 +166,15 @@ function enableSeasonDropdown() {
 
                  ['match', ['get', 'in_operation'],
                  ['year-round', 'Year Round, 'spring to fall', 'May to October'], false,
-                 true
-                 
-                    ]
+                 true],
+
+                 ['match', ['get', 'in_operation'],
+                  ['year-round', 'Year Round', 'spring to fall', 'May-October'], false,
+                  true
+                     ]
                  ]);
-    
+function changeFountainSeason(e) {
+    const value = e.target.value;
+    map.setGlobalStateProperty('fountainSeason', value);
 }
                 
