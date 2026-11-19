@@ -165,7 +165,7 @@ function enableSeasonDropdown() {
                  ['year-round', 'Year Round'], true,
                  false],
 
-                ['==, [global-state', 'fountainSeason'], 'seasonal'],
+                ['==', ['global-state', 'fountainSeason'], 'seasonal'],
                  ['match', ['get', 'in_operation'],
                  ['spring to fall', 'May-October'], true,
                  false],
