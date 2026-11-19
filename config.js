@@ -115,19 +115,22 @@ var config = {
             show: ["my_fountains"],
             callback: "showYearRoundFountains",
             exploreAllowed: true
-    }
-    ]
-    {
+    },
+        {
+            // Chapter 6: reader-controlled season filter.
             alignment: "left",
             title: "Explore fountains by operating season",
-            description: "Drag and zoom to an area you want to explore. Choose a reported operating season below to compare fountain locations while keeping the same map view..",
+            description: "Drag and zoom to an area you want to explore. Choose a reported operating season below to compare fountain locations while keeping the same map view.",
             location: { center: [-123.12, 49.26], zoom: 11, pitch: 0, bearing: 0 },
             legend: [
+                { color: "#0077B6", label: "Year-round" },
+                { color: "#0077B6", label: "Year-round" },
                 { color: "#0077B6", label: "Year-round" }],
             show: ["my_fountains"],
-            callback: "showYearRoundFountains",
+            callback: "enableSeasonDropdown",
             exploreAllowed: true   
     }
+        ]
 
 };
 
@@ -146,5 +149,27 @@ function showYearRoundFountains() {
                   ['year-round', 'Year Round'], true,
                                    false
                 ]);
+
+    //Adapted from "Filter layer symbols using global state" example, season match groups the different values in the data
+function enableSeasonDropdown() {
+    const select = document.get.getElementById('fountain-season');
+    select.value = '';
+    map.setGlobalStateProperty('fountainSeason', select.value);
+
+    map.setFilter('my_fountains', ['case',
+                 ['==', ['global-state', 'fountainSeason'], ''],
+                                  true,
+                ['==', ['global-state', 'fountainSeason'], 'seasonal'],
+                ['match', ['get', 'in_operation'],
+                 ['spring to fall', 'May-October'], true,
+                 false
+
+                 ['match', ['get', 'in_operation'],
+                 ['year-round', 'Year Round, 'spring to fall', 'May to October'], false,
+                 true
+                 
+                    ]
+                 ]);
+    
 }
                 
