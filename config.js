@@ -165,7 +165,7 @@ function enableSeasonDropdown() {
                  false
 
                  ['match', ['get', 'in_operation'],
-                 ['year-round', 'Year Round, 'spring to fall', 'May to October'], false,
+                 ['year-round', 'Year Round, 'spring to fall', 'May-October'], false,
                  true],
 
                  ['match', ['get', 'in_operation'],
