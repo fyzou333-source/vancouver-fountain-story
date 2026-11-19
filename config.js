@@ -46,6 +46,7 @@ var config = {
     ],
 
     // The chapters, in the order a reader scrolls through them
+    // Chapter 1, general openning of the drinking fountain topic
     chapters: [
         {
             alignment: "left",
@@ -55,6 +56,7 @@ var config = {
             show: ["my_fountains"]
         },
         {
+            // Chapter 2, change the location focus on Stanley Park
             alignment: "left",
             title: "Explore fountains around Stanley Park",
             description: "Look at the fountain locations around Stanley Park and the surrounding waterfront. Which are reported as year-round, and which are seasonal? Drag the map to explore and hover over the dots for details.",
@@ -67,13 +69,14 @@ var config = {
             ],
             
             show: ["my_fountains"],
-            // The reader can move and zoom the map in this chapter
-            exploreAllowed: true
+            // The reader can't move and zoom the map in this chapter
+            exploreAllowed: false
         },
         {
+            // Chapter 3, location focus on Mount Pleasant area
             alignment: "left",
             title: "Compare a different part of Vancouver",
-            description: "Now explore Mount Pleasant and its surroundings. How does the pattern of fountain locations compare with the Stanley Park view? Both cahpters sue the same zoom level to support comparison. You can drag and zoom the map and hover over fountains for details.",
+            description: "Now explore Mount Pleasant and its surroundings. How does the pattern of fountain locations compare with the Stanley Park view? Both chapters use the same zoom level to support comparison. You can drag and zoom the map and hover over fountains for details.",
             location: { center: [-123.107590, 49.259762], zoom: 13, pitch: 0, bearing: 0 },
             // Using the same default level of zoom of 13 to align with the Stanley Park for an accurate comparison
             legend: [
@@ -82,10 +85,11 @@ var config = {
                 { color: "#707070", label: "Season not specified" },
             ],
             show: ["my_fountains"],
-            // The reader can move and zoom the map in this chapter
-            exploreAllowed: true
+            // The reader can't move and zoom the map in this chapter
+            exploreAllowed: false
         },
         {
+            // Chapter 4, the city wide general look
             alignment: "left",
             title: "Does the season change in the picture?",
             description: "Return to the citywide view. All recorded fountains are shown here, including seasonal fountains and those without a specified operating season. Notice where the blue year-round fountains appear. In the next chapter, we will hide the other categories so you can compare the patterns.",
@@ -101,6 +105,7 @@ var config = {
         },
 
         {
+            // chapter 5, map of drinking fountains that remians year-round
             alignment: "left",
             title: "What remains year-round?",
             description: "Only fountains reported as operating year-round are shown now. The map starts at the same position and zoom as the previous chapter, making the change easier to see. Where do you notice the gaps between the remaining dots? Scroll back to compare with all recorded fountains.",
@@ -112,6 +117,17 @@ var config = {
             exploreAllowed: true
     }
     ]
+    {
+            alignment: "left",
+            title: "Explore fountains by operating season",
+            description: "Drag and zoom to an area you want to explore. Choose a reported operating season below to compare fountain locations while keeping the same map view..",
+            location: { center: [-123.12, 49.26], zoom: 11, pitch: 0, bearing: 0 },
+            legend: [
+                { color: "#0077B6", label: "Year-round" }],
+            show: ["my_fountains"],
+            callback: "showYearRoundFountains",
+            exploreAllowed: true   
+    }
 
 };
 
